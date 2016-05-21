@@ -1,4 +1,14 @@
 
+### Specific myWeb ###
+
+# Directory name is used to deploy on Tessel
+index.html
+index.js
+server.js
+
+
+
+
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###
