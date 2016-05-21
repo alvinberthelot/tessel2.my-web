@@ -1,10 +1,11 @@
 'use strict';
 
 var express = require('express');
+
 var app = express();
 
-app.get('/', function (req, res) {
-  res.status(200).send('Hello World from Tessel gaius !');
+app.get('/', function(req, res) {
+  res.status(200).sendFile('index.html', { root: __dirname });
 });
 
 module.exports = app;
