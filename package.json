@@ -4,7 +4,7 @@
   "description": "Tessel project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/",
     "start": "t2 run index.js",
     "prebuild": "npm run clean && mkdir public",
     "build": "npm run build:html && npm run build:js && npm run build:config && npm run build:css",
@@ -24,6 +24,8 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
-    "rimraf": "^2.5.2"
+    "chai": "^3.5.0",
+    "rimraf": "^2.5.2",
+    "superagent": "^2.0.0-alpha.3"
   }
 }
