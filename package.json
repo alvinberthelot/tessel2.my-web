@@ -4,12 +4,28 @@
   "description": "Tessel project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/",
+    "start": "t2 run index.js",
+    "prebuild": "npm run clean && mkdir public",
+    "build": "npm run build:html && npm run build:js && npm run build:config && npm run build:css",
+    "build:html": "cp ./src/front-end/index.html ./",
+    "build:js": "cp ./src/index.js ./ && cp ./src/server.js ./",
+    "build:css": "cp ./src/front-end/css/app.css ./public/",
+    "build:config": "cp ./src/config.json ./",
+    "clean": "rimraf index.html && rimraf index.js && rimraf server.js && rimraf config.json && rimraf public"
   },
   "repository": "",
   "keywords": [
     "Tessel"
   ],
   "license": "MIT",
-  "readme": "A bare bones Tessel 2 blinky script."
+  "readme": "A bare bones Tessel 2 blinky script.",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "rimraf": "^2.5.2",
+    "superagent": "^2.0.0-alpha.3"
+  }
 }
