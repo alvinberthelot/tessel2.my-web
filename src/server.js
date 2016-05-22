@@ -2,6 +2,8 @@
 
 var express = require('express');
 
+var config = require('./config.json');
+
 var app = express();
 
 app.use('/static', express.static(__dirname + '/public'));
